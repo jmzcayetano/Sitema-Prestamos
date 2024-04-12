@@ -23,6 +23,16 @@ public class UsuarioController {
 
 
         Set<UsuarioRol> usuarioRoles = new HashSet<>();
+
+        Rol rol = new Rol();
+        rol.setRolId(2L);
+        rol.setRolNombre("NORMAL");
+
+        UsuarioRol usuarioRol = new UsuarioRol();
+        usuarioRol.setUsuario(usuario);
+        usuarioRol.setRol(rol);
+
+        usuarioRoles.add(usuarioRol);
         return usuarioService.guardarUsuario(usuario,usuarioRoles);
     }
 
